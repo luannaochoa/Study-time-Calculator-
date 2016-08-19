@@ -1,7 +1,7 @@
-## Study-Time Calculator 
+# Study-Time Calculator 
 This program calculates how many hours a student should study. This program performs the calculation based on the course difficulty and hours spent in class. 
 
-#Things To Do  
+##Things To Do  
 
 - [ ] Error proof the program 
 - [ ] Add menu option(s)

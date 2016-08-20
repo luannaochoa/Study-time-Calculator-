@@ -4,7 +4,6 @@
 #include <assert.h>
 
 
-/* Struct with info centralized*/
 struct Course {
     char *name;
     int credits;
@@ -13,7 +12,8 @@ struct Course {
 };
 
 
-/* Function that will create struct when called*/
+/* Called: in main */
+/*Function creates struct*/
 struct Course *Course_create(char *name, int credits, int hrsWeekly, int difficulty)
 {
     struct Course *class = malloc(sizeof(struct Course));
@@ -27,7 +27,8 @@ struct Course *Course_create(char *name, int credits, int hrsWeekly, int difficu
     return class;
 }
 
-/*Print out struct*/
+/*Called: in main*/
+/*Function Prints out struct*/
 void Course_print(struct Course *class)
 {
     printf("\nCOURSE NAME: %s\n", class->name);
@@ -49,11 +50,13 @@ void Course_destroy(struct Course *class)
     free(class);
 }
 
-/* Main function */
+
+
 int main( ) {
 
 
-   /*Ask user how courses load to we run for loop to create structs*/
+   /*Ask user how many classes they are taking*/
+   /*We need this info to loop the program the correct number of times*/
 		   int courseLoad;
 
 		   printf("Enter the number of courses you are taking this semester:");
@@ -62,7 +65,7 @@ int main( ) {
 
 
 
-   /*Create structs based on user provided course load*/
+   /*Create structs based on user provided info*/
 		   int count;
 		   char userProvidedClassName[6];
 		   int  userProvidedCreditNumber;
@@ -70,11 +73,11 @@ int main( ) {
 		   int  userProvidedDifficulty;
 		   char *nameClassinForLoop;
 
-		   /* This is the for loop that creates the structs*/
-		   /*We ask the usre for the struct information here and create it*/
-		   /*We create 1 struct at a time*/
+		   
+		  
 
 /*To do: Will use while loop to make this repeat*/ 
+		    /*We create 1 struct at a time*/
 		   for( count = 0; count < courseLoad; ++count )
 		   {
 		   
@@ -112,10 +115,6 @@ int main( ) {
 
 
 		   }
-
-
-
-
 
 
    return 0;

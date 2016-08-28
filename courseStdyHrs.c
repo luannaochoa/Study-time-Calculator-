@@ -4,19 +4,19 @@
 #include <assert.h>
 
 
-struct Course {
+typedef struct Course{
     char *name;
     int credits;
     int hrsWeekly;
     int difficulty;
-};
+} Course;
 
 
 /* Called: in main */
 /*Function creates struct*/
-struct Course *Course_create(char *name, int credits, int hrsWeekly, int difficulty)
+ Course *Course_create(char *name, int credits, int hrsWeekly, int difficulty)
 {
-    struct Course *class = malloc(sizeof(struct Course));
+    Course *class = malloc(sizeof(struct Course));
     assert(class != NULL);
 
     class->name = strdup(name);
@@ -29,7 +29,7 @@ struct Course *Course_create(char *name, int credits, int hrsWeekly, int difficu
 
 /*Called: in main*/
 /*Function Prints out struct*/
-void Course_print(struct Course *class)
+void Course_print(Course *class)
 {
     printf("\nCOURSE NAME: %s\n", class->name);
     printf("-------------------------------------\n");
@@ -42,7 +42,7 @@ void Course_print(struct Course *class)
 
 
 /* Function that will delete structure so we "clean up" */
-void Course_destroy(struct Course *class)
+void Course_destroy(Course *class)
 {
     assert(class != NULL);
 
@@ -103,7 +103,7 @@ int main( ) {
 		   /*Printing struct that was created*/
 	
 		   nameClassinForLoop = userProvidedClassName;
-		   struct Course *userProvidedClassName = Course_create( nameClassinForLoop, 
+		   Course *userProvidedClassName = Course_create( nameClassinForLoop, 
 		   														 userProvidedCreditNumber, 
 												   				 userProvidedHrsWeekly, 
 												   				 userProvidedDifficulty);
